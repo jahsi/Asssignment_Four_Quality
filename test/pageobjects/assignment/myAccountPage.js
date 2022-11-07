@@ -9,6 +9,8 @@ class AccountPage {
     return $('input[id="email_create"]');
   }
 
+  
+
   async clickCreateAccount() {
     await this.createAccountButton.click();
   }

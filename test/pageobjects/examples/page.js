@@ -12,6 +12,6 @@ module.exports = class Page {
   }
 
   openAssignment() {
-    return browser.url("https://magento.softwaretestingboard.com/");
+    return browser.url("http://automationpractice.com/index.php");
   }
 };
