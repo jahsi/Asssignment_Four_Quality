@@ -2,7 +2,10 @@ const Page = require("../page");
 
 class HomePage extends Page {
   get signInButton() {
-    return $('a[title="Log in to your customer account"]');
+    return $("(//li/a[contains(text(),'Sign')])[1]");
+  }
+  get greetingsIfLoggedin() {
+    return $("(//span[@class='logged-in'])[1]");
   }
 
   get createAccountButton() {

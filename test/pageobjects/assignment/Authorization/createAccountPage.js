@@ -1,5 +1,5 @@
 // const { default: $ } = require("webdriverio/build/commands/browser/$");
-const Page = require("../page");
+const Page = require("../../page");
 
 class CreateAccountPage extends Page {
   get firstNameInput() {
@@ -34,7 +34,7 @@ class CreateAccountPage extends Page {
     await this.lastNameInput.setValue(lastName);
     await this.emailAddressInput.setValue(emailAddress);
     await this.passwordConfirmationInput.setValue(password);
-    await this.passwordInput.setValue(password);
+    await this.passwordInput.setValue(passwordConfirmation);
     await this.createAccountButton.click();
   }
 }
