@@ -31,7 +31,6 @@ describe("It should login with a username and password", async () => {
     await expect(HomePage.greetingsIfLoggedin).toHaveTextContaining(
       data.firstName
     );
-    await browser.debug();
   });
 
   // it("should login with with username and password", async () => {
