@@ -13,7 +13,8 @@ describe("It should login and add to cart", async () => {
       data.firstName
     );
     console.log("I should be logged in");
-    await AddToCartPage.clickRandomAnchor();
+    await AddToCartPage.selectRandomAndAddToCart();
+    await expect(AddToCartPage.successMessage).toBeExisting();
     await browser.debug();
   });
 });
