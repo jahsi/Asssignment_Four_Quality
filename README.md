@@ -9,3 +9,10 @@ Purchasing a Product (10 marks)
  Unhappy Path (5 marks)
  Data-Driven Tests (10 marks)
  Testing on multiple browsers (10 marks)
+
+Total: 75 points
+
+
+
+
+Your completed suite should be pushed to a remote GitHub repository and the link shared. It should include: Test Scripts and a Readme file with instructions on how to execute your tests

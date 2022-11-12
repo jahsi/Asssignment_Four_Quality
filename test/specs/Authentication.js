@@ -3,7 +3,7 @@ const HomePage = require("../pageobjects/assignment/home.page");
 const CreateAccountPage = require("../pageobjects/assignment/Authorization/createAccountPage");
 const SignInPage = require("../pageobjects/assignment/Authorization/signInPage");
 
-describe("Authentication Flow", () => {
+describe.skip("Authentication Flow", () => {
   it("Click create account button", async () => {
     await HomePage.openAssignment();
     await HomePage.createAccountButton.click();
@@ -22,7 +22,7 @@ describe("Authentication Flow", () => {
   });
 });
 
-describe("It should login with a username and password", async () => {
+describe.skip("It should login with a username and password", async () => {
   it("Click signInButton", async () => {
     await HomePage.openAssignment();
     await HomePage.clickSignInButton();

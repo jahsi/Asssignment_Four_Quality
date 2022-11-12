@@ -7,6 +7,12 @@ class HomePage extends Page {
   get greetingsIfLoggedin() {
     return $("(//span[@class='logged-in'])[1]");
   }
+  get addCartanchorTagIfPresent() {
+    return $(`//a[@class="action showcart"]/span[@class="counter qty"]`);
+  }
+  get proceedToCheckoutButton() {
+    return $(`//button[@id="top-cart-btn-checkout"]`);
+  }
 
   get createAccountButton() {
     return $("(//li/a[contains(text(),'Create')])[1]");
