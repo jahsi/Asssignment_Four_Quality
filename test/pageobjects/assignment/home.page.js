@@ -14,6 +14,9 @@ class HomePage extends Page {
   get signOutLink() {
     return $(`(//a[contains(text(),'Sign')])[1]`);
   }
+  get accountLink() {
+    return $(`(//a[contains(text(),'Account')])[1]`);
+  }
   get greetingsIfLoggedin() {
     return $("(//span[@class='logged-in'])[1]");
   }
@@ -27,6 +30,14 @@ class HomePage extends Page {
   get createAccountButton() {
     return $("(//li/a[contains(text(),'Create')])[1]");
   }
+
+  get MyOrdersLink() {
+    return $("(//a[contains(text(),'My Orders')])[1]");
+  }
+
+  get myTable() {
+    return $(`//table[@id="my-orders-table"]`);
+  }
   open() {
     return super.openAssignment();
   }
@@ -37,7 +48,13 @@ class HomePage extends Page {
     await this.signOutLink.click();
     console.log("Sign me out");
   }
-  as;
+  async goTOMyOrders() {
+    await this.HomeScreenImage.click();
+    await this.signInButton.click();
+    await this.headerLinkIfSignedIn.click();
+    await this.accountLink.click();
+    await this.MyOrdersLink.click();
+  }
 
   async clickSignInButton() {
     await this.signInButton.click();

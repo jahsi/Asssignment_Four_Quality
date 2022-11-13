@@ -12,7 +12,7 @@ describe("It should login and add to cart", async () => {
   // beforeEach(function () {
   //   HomePage.HomeScreenImage.click();
   // });
-  it("AddToCart", async () => {
+  it.skip("AddToCart", async () => {
     await HomePage.openAssignment();
     await HomePage.clickSignInButton();
     await SignInPage.signInWithCredentials(data.email, data.password);
@@ -26,7 +26,7 @@ describe("It should login and add to cart", async () => {
 });
 // Only works if you did not puchase before
 describe("Log In and Purchase stuff", async () => {
-  it("AddToCart", async () => {
+  it.skip("AddToCart", async () => {
     await HomePage.openAssignment();
     await HomePage.clickSignInButton();
     await SignInPage.signInWithCredentials(data.email, data.password);
