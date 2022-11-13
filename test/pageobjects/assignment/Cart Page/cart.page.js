@@ -8,7 +8,7 @@ class Cart extends Page {
   }
   get randomAnchorTag() {
     return $(
-      `(//li[@class="product-item"]/div/a)[${Math.ceil(Math.random() * 5)}]`
+      `(//li[@class="product-item"]/div/a)[${Math.ceil(Math.random() * 4)}]`
     );
     // // f'//*[@class="destroy"])[{random.randint(startint,endint)}]'
   }
@@ -19,7 +19,7 @@ class Cart extends Page {
 
   get randomSizeAttribute() {
     return $(
-      `(//div[@class="swatch-option text"])[${Math.ceil(Math.random() * 2)}]`
+      `(//div[@class="swatch-option text"])[${Math.ceil(Math.random() * 1)}]`
     );
   }
 

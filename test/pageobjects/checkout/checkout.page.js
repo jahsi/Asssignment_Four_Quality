@@ -62,12 +62,26 @@ class CheckoutPage extends Page {
   get shippingMethodRadioButton() {
     return $(`(//td/input[@type="radio"])[1]`);
   }
+  get ThankyouMessage() {
+    return $(`//span[contains(text(),'Thank')]`);
+  }
 
   get nextContinueButton() {
     return $(`//button[@type="submit"][@data-role="opc-continue"]`);
   }
   get placeOrderButton() {
     return $(`//button[@class="action primary checkout"]`);
+  }
+
+  get newAddress() {
+    return $(`(//button/span[contains(text(),'New')])`);
+  }
+
+  async flowIfAddressExists() {
+    await this.nextContinueButton.click();
+    await browser.pause(5000);
+    await this.placeOrderButton.click();
+    await browser.pause(5000);
   }
   async fillOutShippingAddressIfNotUSA() {
     await this.countrySelectDropDown.click();
