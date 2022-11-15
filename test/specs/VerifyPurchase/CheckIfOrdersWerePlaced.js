@@ -1,7 +1,7 @@
-const data = require("../helper/data.js");
-const HomePage = require("../pageobjects/assignment/home.page");
-const CreateAccountPage = require("../pageobjects/assignment/Authorization/createAccountPage");
-const SignInPage = require("../pageobjects/assignment/Authorization/signInPage");
+const data = require("../../helper/data.js");
+const HomePage = require("../../pageobjects/assignment/home.page");
+const CreateAccountPage = require("../../pageobjects/assignment/Authorization/createAccountPage");
+const SignInPage = require("../../pageobjects/assignment/Authorization/signInPage");
 
 ///TODO Refactor sign in to Hook but not working :/
 ///TODO Have  a test to to record previous order number and search for it or  the test suite validate the purchase of particular items

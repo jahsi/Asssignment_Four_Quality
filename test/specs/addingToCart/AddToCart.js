@@ -1,8 +1,8 @@
-const data = require("../helper/data.js");
-const HomePage = require("../pageobjects/assignment/home.page");
-const SignInPage = require("../pageobjects/assignment/Authorization/signInPage");
-let AddToCartPage = require("../pageobjects/assignment/Cart Page/cart.page");
-let CheckoutPage = require("../pageobjects/checkout/checkout.page");
+const data = require("../../helper/data.js");
+const HomePage = require("../../pageobjects/assignment/home.page");
+const SignInPage = require("../../pageobjects/assignment/Authorization/signInPage");
+let AddToCartPage = require("../../pageobjects/assignment/Cart Page/cart.page");
+let CheckoutPage = require("../../pageobjects/checkout/checkout.page");
 ///FIXME: If the item is a bag or does not contain any options then this will not work
 
 describe("It should login and add to cart", async () => {
@@ -12,7 +12,7 @@ describe("It should login and add to cart", async () => {
   // beforeEach(function () {
   //   HomePage.HomeScreenImage.click();
   // });
-  it.skip("AddToCart", async () => {
+  it("AddToCart", async () => {
     await HomePage.openAssignment();
     await HomePage.clickSignInButton();
     await SignInPage.signInWithCredentials(data.email, data.password);
@@ -26,7 +26,7 @@ describe("It should login and add to cart", async () => {
 });
 // Only works if you did not puchase before
 describe("Log In and Purchase stuff", async () => {
-  it.skip("AddToCart", async () => {
+  it("AddToCart", async () => {
     await HomePage.openAssignment();
     await HomePage.clickSignInButton();
     await SignInPage.signInWithCredentials(data.email, data.password);
@@ -42,7 +42,9 @@ describe("Log In and Purchase stuff", async () => {
     } else {
       await CheckoutPage.fillOutShippingAddressIfNotUSA();
     }
-    await expect(CheckoutPage.ThankyouMessage).toHaveTextContaining("Thank");
+    await browser.debug();
+    await expect(CheckoutPage.ThankyouMessage).toBeExisting();
+
     // await CheckoutPage.ThankyouMessage.isDisplayed();
     await browser.debug();
     await HomePage.signOut();

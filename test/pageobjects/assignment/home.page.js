@@ -43,7 +43,7 @@ class HomePage extends Page {
   }
   async signOut() {
     await this.HomeScreenImage.click();
-    await this.signInButton.click();
+    // await this.signInButton.click();
     await this.headerLinkIfSignedIn.click();
     await this.signOutLink.click();
     console.log("Sign me out");

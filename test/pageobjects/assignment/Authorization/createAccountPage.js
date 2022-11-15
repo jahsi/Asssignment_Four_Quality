@@ -22,6 +22,9 @@ class CreateAccountPage extends Page {
   get createAccountButton() {
     return $('button[type="submit"][title="Create an Account"]');
   }
+  get accountSuccess() {
+    return $(`//div[contains(text(),"Thank")]`);
+  }
 
   async signUpForAccount(
     firstName,
