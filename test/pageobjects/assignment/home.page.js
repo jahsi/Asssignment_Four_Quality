@@ -5,6 +5,9 @@ class HomePage extends Page {
     return $(`(//li/a[contains(text(),'Sign')])[1]`);
   }
 
+  get cartAnchor() {
+    return $(`//a[@class="action showcart active"]`);
+  }
   get HomeScreenImage() {
     return $(`//a[@class="logo"]`);
   }
@@ -41,6 +44,13 @@ class HomePage extends Page {
   open() {
     return super.openAssignment();
   }
+
+  async signOutCartTest() {
+    // await this.signInButton.click();
+    await this.headerLinkIfSignedIn.click();
+    await this.signOutLink.click();
+    console.log("Sign me out");
+  }
   async signOut() {
     await this.HomeScreenImage.click();
     // await this.signInButton.click();
@@ -50,7 +60,7 @@ class HomePage extends Page {
   }
   async goTOMyOrders() {
     await this.HomeScreenImage.click();
-    await this.signInButton.click();
+    // await this.signInButton.click();
     await this.headerLinkIfSignedIn.click();
     await this.accountLink.click();
     await this.MyOrdersLink.click();

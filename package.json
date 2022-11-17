@@ -9,7 +9,7 @@
     "assign": "npx wdio run wdio.conf.js",
     "authentication_test" : "wdio wdio.conf.js --spec ./test/specs/Authentication/Authentication.js",
     "cart_test" : "wdio wdio.conf.js --spec ./test/specs/addingToCart/AddToCart.js",
-    "verify_purchase_history" : "wdio wdio.conf.js --spec ./test/specs/addingToCart/VerifyPurchaseHistory.js"
+    "verify_purchase_history" : "wdio wdio.conf.js --spec ./test/specs/VerifyPurchase/VerifyPurchaseHistory.js"
   },
   
   "keywords": [],

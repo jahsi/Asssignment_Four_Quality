@@ -46,10 +46,10 @@ class Cart extends Page {
   async clickRandomAnchor() {
     await this.randomAnchorTag.click();
   }
-
+  ///TODO To check the color and then  slect based on amount present
   async selectRandomAndAddToCart() {
     await this.randomAnchorTag.click();
-    await this.randomColorAttribute.click();
+    await this.colorForItem.click();
     await this.randomSizeAttribute.click();
     await this.submitButton.click();
   }

@@ -6,10 +6,11 @@ const SignInPage = require("../../pageobjects/assignment/Authorization/signInPag
 const helpers = require("../../helper/helperFunctions.js");
 
 describe("Authentication Flow", () => {
+  let browserName = browser.capabilities.browserName;
   afterEach(async function (done) {
     // drop DB collections
   });
-  it.skip("Click create account button", async () => {
+  it("Click create account button", async () => {
     for (const credentials of listOfData.emails) {
       // let randomEmail =
       //   credentials.email.slice(0, index) +
@@ -19,12 +20,18 @@ describe("Authentication Flow", () => {
       let randomEmail = helpers.returnEmail(credentials.email);
       await HomePage.openAssignment();
       await HomePage.createAccountButton.click();
+      if (browserName == "chrome") {
+        console.log("I am chrome");
+      } else {
+        console.log("I am bot chrome but  " + browser.capabilities.browserName);
+      }
 
-      console.log(randomEmail);
+      console.log(browser.sessionId); // outputs: "57b15c6ea81d0edb9e5b372da3d9ce28"
+      console.log("This is browser Name" + browser.capabilities.browserName); // outputs);
     }
   });
   // test\specs\Authentication\Authentication.js
-  it("Sign up using for a new account", async () => {
+  it.skip("Sign up using for a new account", async () => {
     for (const userData of listOfData.emails) {
       await HomePage.openAssignment();
       await HomePage.createAccountButton.click();
