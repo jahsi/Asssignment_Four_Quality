@@ -15,7 +15,16 @@ Purchasing a Product (10 marks)
 
 Total: 75 points
 
+----------------------------------
+## This would assume that one has webdriver io already installed and set.
+## IF not follow the instructions to download and configure webdriver io.
+
 -------------------------------
+
+### Clone the branch and run 
+```bash
+npm i
+```
 #  How to run the tests
 ## In order to run the tests individually you need to follow the following:
 ##     1.) The Sign Up Test
