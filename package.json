@@ -1,12 +1,17 @@
 {
+  
   "name": "jason_kerr_unit_four_assignment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "assign": "npx wdio run wdio.conf.js"
+    "assign": "npx wdio run wdio.conf.js",
+    "authentication_test" : "wdio wdio.conf.js --spec ./test/specs/Authentication/Authentication.js",
+    "cart_test" : "wdio wdio.conf.js --spec ./test/specs/addingToCart/AddToCart.js",
+    "verify_purchase_history" : "wdio wdio.conf.js --spec ./test/specs/VerifyPurchase/VerifyPurchaseHistory.js"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,6 +19,7 @@
     "webdriverio": "^7.25.4"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@wdio/cli": "^7.25.4",
     "@wdio/local-runner": "^7.25.4",
     "@wdio/mocha-framework": "^7.25.4",
