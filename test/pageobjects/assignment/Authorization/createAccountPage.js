@@ -26,6 +26,10 @@ class CreateAccountPage extends Page {
     return $(`//div[contains(text(),"Thank")]`);
   }
 
+  get errror() {
+    return $(`//div[@data-ui-id="message-error"]`);
+  }
+
   async signUpForAccount(
     firstName,
     lastName,

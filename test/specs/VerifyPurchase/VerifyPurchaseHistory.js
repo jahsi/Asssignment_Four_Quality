@@ -13,7 +13,7 @@ describe("It should verify a purchase", () => {
 
     await browser.pause(2000);
     await HomePage.goTOMyOrders();
-    await browser.debug();
+    // await browser.debug();
     await expect(HomePage.myTable).toBeExisting();
   });
 });
