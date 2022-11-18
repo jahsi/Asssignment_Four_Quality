@@ -4,7 +4,8 @@ const HomePage = require("../../pageobjects/assignment/home.page");
 const CreateAccountPage = require("../../pageobjects/assignment/Authorization/createAccountPage");
 const SignInPage = require("../../pageobjects/assignment/Authorization/signInPage");
 const helpers = require("../../helper/helperFunctions.js");
-
+const edgeData = require("../../helper/edgeData");
+let browserName = browser.capabilities.browserName;
 describe("Authentication Flow", () => {
   let browserName = browser.capabilities.browserName;
   afterEach(async function (done) {
@@ -45,7 +46,7 @@ describe("Authentication Flow", () => {
 
       await browser.pause(3000);
       // await expect(CreateAccountPage.accountSuccess).toBeExisting();
-      await HomePage.signOut();
+      await HomePage.signOutCartTest();
     }
     // await HomePage.openAssignment();
     // await HomePage.createAccountButton.click();
@@ -64,15 +65,32 @@ describe("Authentication Flow", () => {
   });
 });
 
-describe.skip("It should login with a username and password", async () => {
+describe("It should login with a username and password and then try to create an account", async () => {
   it("Click signInButton", async () => {
     await HomePage.openAssignment();
-    await HomePage.clickSignInButton();
-    await SignInPage.signInWithCredentials(data.email, data.password);
-    await expect(HomePage.greetingsIfLoggedin);
-    await expect(HomePage.greetingsIfLoggedin).toHaveTextContaining(
-      data.firstName
-    );
+    await HomePage.createAccountButton.click();
+
+    if (browserName == "chrome") {
+      await CreateAccountPage.signUpForAccount(
+        data.firstName,
+        data.lastName,
+        data.email,
+        data.password,
+        data.password
+      );
+    } else {
+      await CreateAccountPage.signUpForAccount(
+        edgeData.firstName,
+        data.lastName,
+        edgeData.email,
+        data.password,
+        data.password
+      );
+    }
+    await expect(CreateAccountPage.errror).toBeExisting();
+    // await expect(SecurePage.flashAlert).toBeExisting();
+
+    await browser.pause(3000);
   });
 
   // it("should login with with username and password", async () => {
