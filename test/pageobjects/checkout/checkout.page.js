@@ -85,7 +85,9 @@ class CheckoutPage extends Page {
     await browser.url(
       "https://magento.softwaretestingboard.com/checkout/#payment"
     );
-    await browser.pause(5000);
+    // await browser.pause(5000);
+
+    await this.placeOrderButton.waitForDisplayed();
     await this.placeOrderButton.click();
     await browser.pause(5000);
   }
