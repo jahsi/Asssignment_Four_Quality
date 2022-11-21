@@ -78,16 +78,16 @@ class CheckoutPage extends Page {
   }
 
   async flowIfAddressExists() {
-    await browser.url(
-      "https://magento.softwaretestingboard.com/checkout/#shipping"
-    );
+    await this.nextContinueButton.waitForDisplayed();
+    await browser.pause(5000);
     await this.nextContinueButton.click();
-    await browser.url(
-      "https://magento.softwaretestingboard.com/checkout/#payment"
-    );
+
+    await browser.pause(5000);
+
+    await this.placeOrderButton.waitForDisplayed();
     await browser.pause(5000);
     await this.placeOrderButton.click();
-    await browser.pause(5000);
+    // await browser.pause(5000);
   }
   async fillOutShippingAddressIfNotUSA() {
     await this.countrySelectDropDown.click();

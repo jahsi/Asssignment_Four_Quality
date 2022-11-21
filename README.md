@@ -19,7 +19,12 @@ Total: 75 points
 ## This would assume that one has webdriver io already installed and set.
 ## IF not follow the instructions to download and configure webdriver io.
 
+## One also needs the latest version of Microsoft Edge for this to work
+## This was the version that was used 
 -------------------------------
+```bash
+107.0.1418.52 (Official build) (64-bit) 
+```
 
 ### Clone the branch and run 
 ```bash

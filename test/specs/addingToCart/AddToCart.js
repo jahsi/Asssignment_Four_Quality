@@ -25,10 +25,11 @@ describe("It should login and add to cart", async () => {
     await SignInPage.signInWithCredentials(webdata.email, webdata.password);
     await AddToCartPage.selectRandomAndAddToCart();
     await expect(AddToCartPage.successMessage).toBeExisting();
-    await browser.pause(3000);
+    // await browser.pause(3000);
     // await HomePage.HomeScreenImage.click();
     await HomePage.signOutCartTest();
-    await browser.debug();
+    await browser.pause(3000);
+    // await browser.debug();
   });
 });
 // Only works if you did not puchase before
@@ -48,18 +49,26 @@ describe("Log In and Purchase stuff", async () => {
     await browser.pause(2000);
     await HomePage.proceedToCheckoutButton.click();
     await browser.pause(2000);
+
     let element = await CheckoutPage.newAddress;
     let displayed = element.isDisplayed();
     if (displayed) {
+      console.log("I am an addres sthat exiss");
+      // await CheckoutPage.nextContinueButton.waitForDisplayed();
       CheckoutPage.flowIfAddressExists();
     } else {
+      await CheckoutPage.placeOrderButton.waitForDisplayed();
       await CheckoutPage.fillOutShippingAddressIfNotUSA();
     }
-    await browser.debug();
+    // await browser.debug();
+    await CheckoutPage.ThankyouMessage.waitForDisplayed({ timeout: 200000 });
     // await expect(CheckoutPage.ThankyouMessage).toBeExisting();
 
     // await CheckoutPage.ThankyouMessage.isDisplayed();
-    await browser.debug();
+    // await browser.debug();
+    // await browser.pause(10000);
+    // await browser.debug();
+    await browser.pause(3000);
     await HomePage.signOutCartTest();
   });
 });

@@ -11,7 +11,8 @@ describe("Authentication Flow", () => {
   afterEach(async function (done) {
     // drop DB collections
   });
-  it("Click create account button", async () => {
+
+  it.skip("Click create account button", async () => {
     for (const credentials of listOfData.emails) {
       // let randomEmail =
       //   credentials.email.slice(0, index) +
@@ -32,7 +33,7 @@ describe("Authentication Flow", () => {
     }
   });
   // test\specs\Authentication\Authentication.js
-  it.skip("Sign up using for a new account", async () => {
+  it("Sign up using for a new account", async () => {
     for (const userData of listOfData.emails) {
       await HomePage.openAssignment();
       await HomePage.createAccountButton.click();
@@ -45,7 +46,7 @@ describe("Authentication Flow", () => {
       );
 
       await browser.pause(3000);
-      // await expect(CreateAccountPage.accountSuccess).toBeExisting();
+      await expect(CreateAccountPage.accountSuccess).toBeExisting();
       await HomePage.signOutCartTest();
     }
     // await HomePage.openAssignment();
